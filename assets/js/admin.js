@@ -307,6 +307,7 @@ function focus_check() {
 
 	// Trigger Shortcuts Modal
 	Mousetrap.bind('?', function() {
+		focus_check();
 		$("a#admin-keys-modal-trigger")[0].click();
 	});
 
