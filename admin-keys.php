@@ -32,7 +32,8 @@ class admin_keys
         if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
             add_action( 'admin_head', array( $this, 'get_header' ) );
             add_action( 'init', array( $this, 'set_help_tab' ) );
-            // add_action( 'admin_menu', array( $this, 'set_menu' ) ); <-- deactivated becuase it's incomplete/inaccurate.
+            add_action( 'admin_footer', array( $this, 'add_modal' ) );
+            add_filter( 'admin_footer_text', array( $this, 'add_modal_link'), 999 );
         }
     }
 
@@ -104,6 +105,32 @@ class admin_keys
     	require_once( $this->tmpl_dir . 'help-tab.php' );
 
     }
+
+    /**
+     * renders plugin help modal
+     *
+     * @since 1.1
+     *
+     */
+    function add_modal() {
+
+    	require_once( $this->tmpl_dir . 'modal-popup.php' );
+
+    }
+
+    /**
+     * renders plugin help modal
+     *
+     * @since 1.1
+     *
+     */
+    function add_modal_link($text) {
+
+    	return $text . ' <a href="#TB_inline?width=600&height=550&inlineId=admin-keys-modal" id="admin-keys-modal-trigger" class="thickbox">Admin Shortcuts</a>';
+
+    }
+
+
 }
 
 // instantiate the plugin

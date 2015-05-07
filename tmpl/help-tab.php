@@ -83,7 +83,7 @@ class admin_keys_help
 		{
 			get_current_screen()->add_help_tab( array(
 				 'id'       => $id
-				,'title'    => __( $data['title'], 'some_textdomain' )
+				,'title'    => __( $data['title'], 'admin-keys' )
 				// Use the content only if you want to add something
 				// static on every help tab. Example: Another title inside the tab
 				,'content'  => '<h2>Admin Keyboard Shortcuts</h2>'
@@ -107,5 +107,3 @@ class admin_keys_help
 // There're some edge cases, as for example on reading options screen, your
 // Help Tabs get loaded before the built in tabs. This seems to be a core error.
 add_action( 'in_admin_header', array('admin_keys_help', 'init') );
-// add_action( 'load-post.php', array( 'admin_keys_help', 'init' ) );
-// add_action( 'load-post-new.php', array( 'admin_keys_help', 'init' ) );
