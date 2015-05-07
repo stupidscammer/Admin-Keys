@@ -1,0 +1,42 @@
+#tab-panel-admin-keys .columns {
+	padding-bottom: .5rem;
+}
+#tab-panel-admin-keys .columns:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+#tab-panel-admin-keys .column {
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+}
+#tab-panel-admin-keys .column:nth-child(odd) {
+	padding-right: .25rem;
+}
+#tab-panel-admin-keys .column:nth-child(even) {
+	padding-left: .25rem;
+}
+#tab-panel-admin-keys .column .inside {
+	max-height: 2.5rem;
+	margin: .5rem 0 0;
+	padding: .75rem;
+	background-color: #E4E9EB;
+	font-size: .01px;
+	text-align: justify;
+	box-sizing: border-box;
+}
+#tab-panel-admin-keys .inside:after {
+	display: inline-block;
+	width: 100%;
+	content: "";
+}
+#tab-panel-admin-keys .column kbd, #tab-panel-admin-keys .column strong {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	font-size: .875rem;
+	vertical-align: bottom;
+	text-align: left;
+}
